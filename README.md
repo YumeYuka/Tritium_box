@@ -10,7 +10,7 @@
 
 ## 一些额外的原因
 
-  已经有了`cutoolbox`，为什么还要制作`[tritium_box](https://tritium.nightrainmilkyway.cn/)`,当然我们完全可以反编译`cutoolbox`，将我们的配置文件内置，但我们并不希望这样做，因为`cutoolbox`的作者[chenzyadb](https://github.com/chenzyadb)已经为我们留了导入配置功能的使用，但有些用户在看完我们的文档之后仍然无法正确导入使用,于是我们决定制作`tritium_box`.
+  已经有了`cutoolbox`，为什么还要制作[tritium_box](https://tritium.nightrainmilkyway.cn/),当然我们完全可以反编译`cutoolbox`，将我们的配置文件内置，但我们并不希望这样做，因为`cutoolbox`的作者[chenzyadb](https://github.com/chenzyadb)已经为我们留了导入配置功能的使用，但有些用户在看完我们的文档之后仍然无法正确导入使用,于是我们决定制作`tritium_box`.
 
  我们明确表明非常建议用户使用Cutoolbox，而Tritium_box只是作为最差一种选择
 ## 附加
