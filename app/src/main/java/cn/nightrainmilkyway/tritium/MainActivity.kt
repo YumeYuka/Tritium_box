@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
 
         extractAssetsToInternalStorage(this)
         if (!isRooted()) {
-            Toast.makeText(this, "设备为root或为授予root权限.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "设备未root或为授予root权限.", Toast.LENGTH_SHORT).show()
             finish()
             return
         }
