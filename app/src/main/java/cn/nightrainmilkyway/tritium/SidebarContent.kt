@@ -105,6 +105,7 @@ fun SidebarContent() {
                 title = "群组",
                 description = "交流探讨",
                 backgroundColor = Color(0xFFfdf2f0),
+                url = "https://qm.qq.com/q/8Vsq7Cn224",
                 preferenceKey = "settings_switch_state"
             )
         }

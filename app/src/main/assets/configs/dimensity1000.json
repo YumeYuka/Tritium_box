@@ -1,14 +1,14 @@
 {
   "name": "Dimensity1000+",
-  "author": "chenzyadb",
+  "author": "Tritium",
   "configVersion": 10,
   "CpuGovernor": {
     "enable": true,
     "params": {
-      "activeRateHz": 60,
-      "idleRateHz": 30,
+      "activeRateHz": 55,
+      "idleRateHz": 35,
       "activeDelay": 2000,
-      "minFreqStep": 200
+      "minFreqStep": 240
     },
     "policies": [
       {
@@ -17,7 +17,7 @@
         "lowPowerFreq": 600,
         "optimalFreq": 1600,
         "modelFreq": 2000,
-        "modelPower": 320
+        "modelPower": 290
       },
       {
         "coreNum": 4,
@@ -25,17 +25,17 @@
         "lowPowerFreq": 700,
         "optimalFreq": 1800,
         "modelFreq": 2600,
-        "modelPower": 1650
+        "modelPower": 1500
       }
     ],
     "modes": {
       "powersave": {
-        "powerLimit": 3000,
+        "powerLimit": 1600,
         "perfMargin": [10, 10],
         "upRateLatency": 600,
-        "overHeatTemp": 80,
-        "burstCapacity": 12000,
-        "recoverTime": 4000,
+        "overHeatTemp": 60,
+        "burstCapacity": 9000,
+        "recoverTime": 5000,
         "freqBurst": {
           "none": {
             "durationTime": 0,
@@ -44,22 +44,22 @@
             "boost": 0
           },
           "tap": {
-            "durationTime": 100,
-            "lowLatency": false,
-            "extraMargin": 20,
-            "boost": 0
+            "durationTime": 200,
+            "lowLatency": true,
+            "extraMargin": 15,
+            "boost": 10
           },
           "swipe": {
-            "durationTime": 200,
-            "lowLatency": false,
+            "durationTime": 270,
+            "lowLatency": true,
             "extraMargin": 10,
-            "boost": 0
+            "boost": 15
           },
           "gesture": {
-            "durationTime": 100,
-            "lowLatency": false,
-            "extraMargin": 20,
-            "boost": 0
+            "durationTime": 460,
+            "lowLatency": true,
+            "extraMargin": 15,
+            "boost": 15
           },
           "heavyload": {
             "durationTime": 1000,
@@ -82,12 +82,12 @@
         }
       },
       "balance": {
-        "powerLimit": 4000,
-        "perfMargin": [20, 20],
-        "upRateLatency": 400,
-        "overHeatTemp": 80,
-        "burstCapacity": 16000,
-        "recoverTime": 4000,
+        "powerLimit": 2600,
+        "perfMargin": [15, 20],
+        "upRateLatency": 500,
+        "overHeatTemp": 65,
+        "burstCapacity": 12000,
+        "recoverTime": 5000,
         "freqBurst": {
           "none": {
             "durationTime": 0,
@@ -96,48 +96,48 @@
             "boost": 0
           },
           "tap": {
-            "durationTime": 100,
-            "lowLatency": false,
-            "extraMargin": 20,
-            "boost": 0
+            "durationTime": 190,
+            "lowLatency": true,
+            "extraMargin": 10,
+            "boost": 15
           },
           "swipe": {
-            "durationTime": 200,
-            "lowLatency": false,
+            "durationTime": 410,
+            "lowLatency": true,
             "extraMargin": 10,
-            "boost": 0
+            "boost": 15
           },
           "gesture": {
-            "durationTime": 100,
-            "lowLatency": false,
+            "durationTime": 480,
+            "lowLatency": true,
             "extraMargin": 20,
-            "boost": 0
+            "boost": 20
           },
           "heavyload": {
             "durationTime": 1000,
             "lowLatency": false,
             "extraMargin": 20,
-            "boost": 0
+            "boost": 10
           },
           "jank": {
-            "durationTime": 100,
+            "durationTime": 500,
             "lowLatency": true,
-            "extraMargin": 0,
+            "extraMargin": 10,
             "boost": 40
           },
           "bigJank": {
-            "durationTime": 200,
+            "durationTime": 1500,
             "lowLatency": true,
-            "extraMargin": 0,
+            "extraMargin": 15,
             "boost": 60
           }
         }
       },
       "performance": {
-        "powerLimit": 5000,
-        "perfMargin": [30, 30],
-        "upRateLatency": 200,
-        "overHeatTemp": 90,
+        "powerLimit": 4600,
+        "perfMargin": [30, 55],
+        "upRateLatency": 50,
+        "overHeatTemp": 75,
         "burstCapacity": 20000,
         "recoverTime": 4000,
         "freqBurst": {
@@ -148,16 +148,16 @@
             "boost": 0
           },
           "tap": {
-            "durationTime": 100,
-            "lowLatency": false,
+            "durationTime": 330,
+            "lowLatency": true,
             "extraMargin": 20,
-            "boost": 0
+            "boost": 15
           },
           "swipe": {
-            "durationTime": 200,
-            "lowLatency": false,
-            "extraMargin": 10,
-            "boost": 0
+            "durationTime": 460,
+            "lowLatency": true,
+            "extraMargin": 15,
+            "boost": 20
           },
           "gesture": {
             "durationTime": 100,
@@ -166,22 +166,22 @@
             "boost": 0
           },
           "heavyload": {
-            "durationTime": 1000,
-            "lowLatency": false,
+            "durationTime": 1300,
+            "lowLatency": true,
             "extraMargin": 20,
-            "boost": 0
+            "boost": 30
           },
           "jank": {
-            "durationTime": 100,
+            "durationTime": 600,
             "lowLatency": true,
-            "extraMargin": 0,
-            "boost": 40
+            "extraMargin": 10,
+            "boost": 25
           },
           "bigJank": {
-            "durationTime": 200,
+            "durationTime": 1400,
             "lowLatency": true,
-            "extraMargin": 0,
-            "boost": 60
+            "extraMargin": 20,
+            "boost": 35
           }
         }
       },
@@ -200,16 +200,16 @@
             "boost": 0
           },
           "tap": {
-            "durationTime": 100,
-            "lowLatency": false,
+            "durationTime": 350,
+            "lowLatency": true,
             "extraMargin": 20,
-            "boost": 0
+            "boost": 20
           },
           "swipe": {
-            "durationTime": 200,
-            "lowLatency": false,
+            "durationTime": 500,
+            "lowLatency": true,
             "extraMargin": 10,
-            "boost": 0
+            "boost": 20
           },
           "gesture": {
             "durationTime": 100,
@@ -218,10 +218,10 @@
             "boost": 0
           },
           "heavyload": {
-            "durationTime": 1000,
-            "lowLatency": false,
+            "durationTime": 2000,
+            "lowLatency": true,
             "extraMargin": 20,
-            "boost": 0
+            "boost": 40
           },
           "jank": {
             "durationTime": 100,
@@ -616,28 +616,28 @@
     ],
     "modes": {
       "powersave": {
-        "maxFreq": 550,
-        "minFreq": 0,
+        "maxFreq": 420,
+        "minFreq": 200,
         "upRateThres": 90,
         "downRateDiff": 10
       },
       "balance": {
-        "maxFreq": 700,
-        "minFreq": 0,
-        "upRateThres": 80,
+        "maxFreq": 550,
+        "minFreq": 270,
+        "upRateThres": 75,
         "downRateDiff": 10
       },
       "performance": {
-        "maxFreq": 850,
-        "minFreq": 0,
-        "upRateThres": 70,
-        "downRateDiff": 10
+        "maxFreq": 600,
+        "minFreq": 370,
+        "upRateThres": 55,
+        "downRateDiff": 20
       },
       "fast": {
         "maxFreq": 850,
-        "minFreq": 0,
-        "upRateThres": 70,
-        "downRateDiff": 20
+        "minFreq": 800,
+        "upRateThres": 30,
+        "downRateDiff": 25
       }
     }
   },

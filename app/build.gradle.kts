@@ -12,7 +12,7 @@ android {
         applicationId = "cn.nightrainmilkyway.tritium"
         minSdk = 28
         targetSdk = 35
-        versionCode = 1
+        versionCode = 100000
         versionName = "1.0.0_beta"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
