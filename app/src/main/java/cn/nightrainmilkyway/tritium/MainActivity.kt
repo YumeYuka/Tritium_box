@@ -1,5 +1,7 @@
 package cn.nightrainmilkyway.tritium
 
+import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.AccessibilityServiceInfo
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Toast
@@ -32,6 +34,7 @@ import java.io.OutputStream
 import java.io.IOException
 import android.content.Context
 import android.content.res.AssetManager
+import android.view.accessibility.AccessibilityEvent
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -49,7 +52,7 @@ class MainActivity : ComponentActivity() {
             finish()
             return
         }
-        setFilePermissionsAndRunScript("/data/data/cn.nightrainmilkyway.tritium/files/scripts/run_scheduler.sh")
+        setFilePermissionsAndRunScript("/data/data/cn.nightrainmilkyway.tritium/files/scripts/init.sh")
 
         setContent {
             TritiumTheme {
@@ -261,3 +264,4 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+

@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.IOException
+import android.content.Context
 
 @Composable
 fun IconTitleBox(
@@ -61,6 +62,7 @@ fun IconTitleBox(
     val switchState = remember { mutableStateOf(
         sharedPreferences.getBoolean(preferenceKey, initialSwitchChecked)
     ) }
+
     if (switchState.value) {
         if (isRooted()) {
             scriptPath?.let {
@@ -127,6 +129,11 @@ fun IconTitleBox(
                         switchState.value = newChecked
                         sharedPreferences.edit().putBoolean(preferenceKey, newChecked).apply()
                         onSwitchChanged(newChecked)
+                        if (newChecked) {
+                            MyAccessibilityService.startService(context)
+                        } else {
+                            MyAccessibilityService.stopService(context)
+                        }
                     },
                     colors = SwitchDefaults.colors(
                         checkedThumbColor = Color.White,

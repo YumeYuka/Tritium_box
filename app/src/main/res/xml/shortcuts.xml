@@ -1,0 +1,54 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="powersave"
+        android:enabled="true"
+        android:icon="@drawable/powersave"
+        android:shortcutShortLabel="@string/shortcut_powersave_short_label"
+        android:shortcutLongLabel="@string/shortcut_powersave_long_label"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message">
+        <intent
+            android:action="cn.nightrainmilkyway.tritium.ACTION_CHANGE_MODE"
+            android:targetClass="cn.nightrainmilkyway.tritium.ModeShortcutReceiver">
+            <extra android:name="mode" android:value="省电" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="balance"
+        android:enabled="true"
+        android:icon="@drawable/balance"
+        android:shortcutShortLabel="@string/shortcut_balance_short_label"
+        android:shortcutLongLabel="@string/shortcut_balance_long_label"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message">
+        <intent
+            android:action="cn.nightrainmilkyway.tritium.ACTION_CHANGE_MODE"
+            android:targetClass="cn.nightrainmilkyway.tritium.ModeShortcutReceiver">
+            <extra android:name="mode" android:value="均衡" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="performance"
+        android:enabled="true"
+        android:icon="@drawable/performance"
+        android:shortcutShortLabel="@string/shortcut_performance_short_label"
+        android:shortcutLongLabel="@string/shortcut_performance_long_label"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message">
+        <intent
+            android:action="cn.nightrainmilkyway.tritium.ACTION_CHANGE_MODE"
+            android:targetClass="cn.nightrainmilkyway.tritium.ModeShortcutReceiver">
+            <extra android:name="mode" android:value="性能" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="fast"
+        android:enabled="true"
+        android:icon="@drawable/fast"
+        android:shortcutShortLabel="@string/shortcut_fast_short_label"
+        android:shortcutLongLabel="@string/shortcut_fast_long_label"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message">
+        <intent
+            android:action="cn.nightrainmilkyway.tritium.ACTION_CHANGE_MODE"
+            android:targetClass="cn.nightrainmilkyway.tritium.ModeShortcutReceiver">
+            <extra android:name="mode" android:value="极速" />
+        </intent>
+    </shortcut>
+</shortcuts>
