@@ -272,9 +272,10 @@ change_task_sched "swapd" ""
 change_task_cpuset "compactd" "system-background"
 change_task_sched "compactd" ""
 
-chmod 777 "${BASE_DIR}/../scripts/install.sh"
-"${BASE_DIR}/../scripts/install.sh"
+chmod 777 "${BASE_DIR}/install.sh"
+"${BASE_DIR}/install.sh"
 chmod 777 "${BASE_DIR}/../binaries/CuDaemon"
 "${BASE_DIR}/../binaries/CuDaemon" -R "${BASE_DIR}/../binaries/config.json" "${BASE_DIR}/../binaries/mode.txt" "${BASE_DIR}/../binaries/log.txt"
 
 exit 0
+

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Tritium</string>
+    <string name="accessibility_service_description">string</string>
+    <string name="shortcut_powersave_long_label">省电模式</string>
+    <string name="shortcut_balance_long_label">均衡模式</string>
+    <string name="shortcut_performance_long_label">性能模式</string>
+    <string name="shortcut_fast_long_label">极速模式</string>
+    <string name="shortcut_disabled_message">Shortcut disabled</string>
+    <string name="shortcut_powersave_short_label">省电</string>
+    <string name="shortcut_balance_short_label">均衡</string>
+    <string name="shortcut_performance_short_label">性能</string>
+    <string name="shortcut_fast_short_label">极速</string>
 </resources>

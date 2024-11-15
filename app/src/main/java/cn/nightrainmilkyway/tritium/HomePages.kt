@@ -1,6 +1,8 @@
 package cn.nightrainmilkyway.tritium
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -9,16 +11,19 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import cn.nightrainmilkyway.tritium.ui.theme.TritiumTheme
 import java.io.IOException
+import java.io.File
 
 @Preview
 @Composable
 fun HomePages() {
     TritiumTheme {
+        val context = LocalContext.current
         Box(
             modifier = Modifier.fillMaxSize()
         ) {
@@ -43,13 +48,14 @@ fun HomePages() {
                         .padding(bottom = 16.dp)
                         .offset(y = 10.dp),
                 )
-                var currentMode by remember { mutableStateOf("均衡") }
+                var currentMode by remember { mutableStateOf(readModeFromFile()) }
 
                 ModeDisplayBlock(
                     currentMode = currentMode,
                     onModeChange = { newMode ->
                         currentMode = newMode
                         writeModeToFile(newMode)
+                        context.sendBroadcast(Intent("cn.nightrainmilkyway.tritium.UPDATE_TILE"))
                     }
                 )
             }
@@ -121,7 +127,6 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
         }
     }
 }
-
 @SuppressLint("SdCardPath")
 fun writeModeToFile(mode: String) {
     try {
@@ -131,7 +136,7 @@ fun writeModeToFile(mode: String) {
             "均衡" -> "balance"
             "性能" -> "performance"
             "极速" -> "fast"
-            else -> "unknown"
+            else -> "balance"
         }
         val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "echo $modeText > $filePath"))
         process.waitFor()
@@ -139,5 +144,27 @@ fun writeModeToFile(mode: String) {
         e.printStackTrace()
     } catch (e: InterruptedException) {
         e.printStackTrace()
+    }
+}
+
+@SuppressLint("SdCardPath")
+fun readModeFromFile(): String {
+    return try {
+        val filePath = "/data/data/cn.nightrainmilkyway.tritium/files/binaries/mode.txt"
+        val file = File(filePath)
+        if (file.exists()) {
+            when (file.readText().trim()) {
+                "powersave" -> "省电"
+                "balance" -> "均衡"
+                "performance" -> "性能"
+                "fast" -> "极速"
+                else -> "均衡" // Default mode if file content is unknown
+            }
+        } else {
+            "均衡" // Default mode if file does not exist
+        }
+    } catch (e: IOException) {
+        e.printStackTrace()
+        "均衡" // Default mode in case of an error
     }
 }

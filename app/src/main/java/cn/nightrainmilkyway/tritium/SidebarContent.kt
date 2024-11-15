@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -47,7 +45,7 @@ fun SidebarContent() {
                 },
                 iconBackgroundColor = Color(0xFFf7e3e1),
                 preferenceKey = "setting",
-                scriptPath = "/data/data/cn.nightrainmilkyway.tritium/files/scripts/keep_alive.sh"
+
             )
             Spacer(modifier = Modifier.height(16.dp))
             IconTitleBox(
@@ -68,7 +66,7 @@ fun SidebarContent() {
             IconTitleBox(
                 icon = R.drawable.verified_24dp_5f6368,
                 title = "版本号",
-                description = "1.0.0_Beta",
+                description = "1.0.2_release_preview",
                 backgroundColor = Color(0xFFfdf2f0),
                 preferenceKey = "settings_switch_state"
             )
