@@ -3,7 +3,10 @@ package cn.nightrainmilkyway.tritium
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.content.Intent
+import android.content.IntentFilter
+import android.content.BroadcastReceiver
 import android.annotation.SuppressLint
+import android.content.Context
 import android.util.Log
 import java.io.File
 import java.io.IOException
@@ -11,9 +14,22 @@ import java.io.IOException
 @SuppressLint("SdCardPath")
 class BalanceTileService : TileService() {
 
+    private val tileUpdateReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            updateTile()
+        }
+    }
+
     override fun onStartListening() {
         super.onStartListening()
         updateTile()
+        val filter = IntentFilter("cn.nightrainmilkyway.tritium.UPDATE_TILE")
+        registerReceiver(tileUpdateReceiver, filter, RECEIVER_NOT_EXPORTED)
+    }
+
+    override fun onStopListening() {
+        super.onStopListening()
+        unregisterReceiver(tileUpdateReceiver)
     }
 
     override fun onClick() {
@@ -21,7 +37,9 @@ class BalanceTileService : TileService() {
         Log.d("BalanceTileService", "Tile clicked")
         setMode("balance")
         updateTile()
-        sendBroadcast(Intent("cn.nightrainmilkyway.tritium.UPDATE_TILE"))
+        sendBroadcast(Intent("cn.nightrainmilkyway.tritium.UPDATE_TILE").setPackage(/* TODO: provide the application ID. For example: */
+            packageName
+        ))
     }
 
     private fun updateTile() {
