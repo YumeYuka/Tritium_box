@@ -73,7 +73,7 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
             .offset(y = 100.dp),
         shape = RoundedCornerShape(30.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer
+            containerColor = Color(0xFFfff8f7)
         ),
         elevation = CardDefaults.elevatedCardElevation(12.dp)
     ) {
@@ -111,7 +111,7 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
                             .padding(0.dp),
                         shape = shape,
                         colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.secondaryContainer
+                            containerColor = Color(0xFFfff8f7)
                         ),
                         elevation = CardDefaults.elevatedCardElevation(6.dp),
                     ) {

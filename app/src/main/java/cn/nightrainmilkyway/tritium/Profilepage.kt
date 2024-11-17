@@ -28,7 +28,9 @@ fun ProfileText(url: String) {
     Column(
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize().padding(16.dp)
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
     ) {
         Spacer(modifier = Modifier.height(140.dp))
 
@@ -40,10 +42,8 @@ fun ProfileText(url: String) {
                 .clickable {
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     context.startActivity(intent)
-                },
+                }
         )
-        Spacer(modifier = Modifier.height(360.dp))
-        Text("Apache-2.0 license", fontSize = 15.sp, style = MaterialTheme.typography.bodyMedium)
     }
 }
 
@@ -101,9 +101,9 @@ fun ProfileList() {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+//        verticalArrangement = Arrangement.spacedBy(16.dp) // Adjusted spacing
     ) {
-        Spacer(modifier = Modifier.weight(2f))
+        Spacer(modifier = Modifier.weight(4f))
         Profile(
             name = "Chenzyadb",
             description = "@ 千人之诺诺, 不如一士之谔谔",
@@ -121,6 +121,12 @@ fun ProfileList() {
             description = "@ 与其仰望星空，不如去做摘星星的人。",
             imageResId = R.mipmap.suni,
             url = "https://github.com/Suni-code"
+        )
+        Profile(
+            name = "游荡的鱼",
+            description = "@ 混吃等死",
+            imageResId = R.mipmap.fw,
+            url = "https://github.com/"
         )
         Spacer(modifier = Modifier.weight(1f))
     }

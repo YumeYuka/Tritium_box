@@ -66,7 +66,7 @@ fun SidebarContent() {
             IconTitleBox(
                 icon = R.drawable.verified_24dp_5f6368,
                 title = "版本号",
-                description = "1.0.2_release_preview",
+                description = "1.0.4_release",
                 backgroundColor = Color(0xFFfdf2f0),
                 preferenceKey = "settings_switch_state"
             )
