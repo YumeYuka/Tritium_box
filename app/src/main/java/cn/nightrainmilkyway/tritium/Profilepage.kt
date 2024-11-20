@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.platform.LocalContext
 import cn.nightrainmilkyway.tritium.ui.theme.TritiumTheme
 
-
 @Composable
 fun ProfileText(url: String) {
     val context = LocalContext.current
@@ -38,7 +37,6 @@ fun ProfileText(url: String) {
             painter = painterResource(id = R.mipmap.logo),
             contentDescription = "Profile picture",
             modifier = Modifier
-//                .size(270.dp)
                 .clickable {
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     context.startActivity(intent)
@@ -46,7 +44,6 @@ fun ProfileText(url: String) {
         )
     }
 }
-
 
 @Composable
 fun Profile(
@@ -100,8 +97,7 @@ fun ProfileList() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
-//        verticalArrangement = Arrangement.spacedBy(16.dp) // Adjusted spacing
+            .padding(16.dp)
     ) {
         Spacer(modifier = Modifier.weight(4f))
         Profile(
@@ -123,7 +119,7 @@ fun ProfileList() {
             url = "https://github.com/Suni-code"
         )
         Profile(
-            name = "游荡的鱼",
+            name = "Fiagelia",
             description = "@ 混吃等死",
             imageResId = R.mipmap.fw,
             url = "https://github.com/"

@@ -10,4 +10,5 @@
     <string name="shortcut_balance_short_label">均衡</string>
     <string name="shortcut_performance_short_label">性能</string>
     <string name="shortcut_fast_short_label">极速</string>
+    <string name="mode_tile_service_label">Mode Switch</string>
 </resources>
