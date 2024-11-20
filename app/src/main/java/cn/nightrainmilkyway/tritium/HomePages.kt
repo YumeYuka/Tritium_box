@@ -84,7 +84,7 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
         ) {
             Text(
                 text = "当前模式: $currentMode",
-                style = MaterialTheme.typography.bodyLarge,
+                style = MaterialTheme.typography.bodyMedium,
                 color = Color.Black,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
@@ -119,7 +119,10 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
                             contentAlignment = Alignment.Center,
                             modifier = Modifier.padding(16.dp)
                         ) {
-                            Text(text = mode, color = Color.Black)
+                            Text(
+                                text = mode, color = Color.Black,
+                                style = MaterialTheme.typography.bodyMedium
+                            )
                         }
                     }
                 }
@@ -127,6 +130,7 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
         }
     }
 }
+
 @SuppressLint("SdCardPath")
 fun writeModeToFile(mode: String) {
     try {

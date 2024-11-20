@@ -15,6 +15,40 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+import androidx.compose.material3.Typography
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import cn.nightrainmilkyway.tritium.R
+
+val customFontFamily = FontFamily(
+    Font(R.font.yuanshen, FontWeight.Normal)
+)
+
+val customTypography = Typography(
+    headlineSmall = TextStyle(
+        fontFamily = customFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = customFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = customFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp
+    ),
+    bodySmall = TextStyle(
+        fontFamily = customFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp
+    )
+)
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -39,6 +73,7 @@ fun TritiumTheme(
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
+
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
@@ -56,7 +91,7 @@ fun TritiumTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = customTypography,
         content = content
     )
 }

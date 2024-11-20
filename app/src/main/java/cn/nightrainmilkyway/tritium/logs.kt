@@ -1,6 +1,5 @@
 package cn.nightrainmilkyway.tritium
 
-
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -66,12 +65,7 @@ fun Log() {
                 ) {
                     Text(
                         text = fileContent,
-                        style = TextStyle(
-                            fontFamily = FontFamily.Default,
-                            fontWeight = FontWeight.Normal,
-                            fontSize = 14.sp,
-                            color = Color.Black
-                        ),
+                        style = MaterialTheme.typography.bodySmall,
                         modifier = Modifier
                             .verticalScroll(rememberScrollState())
                             .fillMaxSize()

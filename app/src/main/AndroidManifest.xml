@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,129 +14,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tritium"
         tools:targetApi="31">
+
         <service
-            android:name=".MyAccessibilityService"
+            android:name=".AccessibilityService"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
-
             <meta-data
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
         </service>
-        <receiver
-            android:name=".ModeShortcutReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="cn.nightrainmilkyway.tritium.ACTION_CHANGE_MODE" />
-            </intent-filter>
-        </receiver>
 
         <service
-            android:name=".PowersaveTileService"
+            android:name=".AccessibilityService"
             android:exported="true"
-            android:icon="@drawable/powersave"
-            android:label="省电模式"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <service
+            android:name=".ModeTileService"
+            android:exported="true"
+            android:label="@string/mode_tile_service_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-
-        <service
-            android:name=".BalanceTileService"
-            android:exported="true"
-            android:icon="@drawable/balance"
-            android:label="均衡模式"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <service
-            android:name=".PerformanceTileService"
-            android:exported="true"
-            android:icon="@drawable/performance"
-            android:label="性能模式"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <service
-            android:name=".FastTileService"
-            android:exported="true"
-            android:icon="@drawable/fast"
-            android:label="极速模式"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <activity-alias
-            android:name=".PowersaveShortcut"
-            android:enabled="true"
-            android:exported="true"
-            android:icon="@drawable/powersave"
-            android:label="@string/shortcut_powersave_short_label"
-            android:targetActivity=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
-            </intent-filter>
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
-        </activity-alias>
-
-        <activity-alias
-            android:name=".BalanceShortcut"
-            android:enabled="true"
-            android:exported="true"
-            android:icon="@drawable/balance"
-            android:label="@string/shortcut_balance_short_label"
-            android:targetActivity=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
-            </intent-filter>
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
-        </activity-alias>
-
-        <activity-alias
-            android:name=".PerformanceShortcut"
-            android:enabled="true"
-            android:exported="true"
-            android:icon="@drawable/performance"
-            android:label="@string/shortcut_performance_short_label"
-            android:targetActivity=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
-            </intent-filter>
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
-        </activity-alias>
-
-        <activity-alias
-            android:name=".FastShortcut"
-            android:enabled="true"
-            android:exported="true"
-            android:icon="@drawable/fast"
-            android:label="@string/shortcut_fast_short_label"
-            android:targetActivity=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
-            </intent-filter>
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
-        </activity-alias>
 
         <activity
             android:name=".MainActivity"
@@ -143,7 +56,6 @@
             android:theme="@style/Theme.Tritium">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

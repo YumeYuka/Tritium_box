@@ -37,7 +37,6 @@ import androidx.compose.ui.unit.dp
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.IOException
-import android.content.Context
 
 @Composable
 fun IconTitleBox(
@@ -130,9 +129,9 @@ fun IconTitleBox(
                         sharedPreferences.edit().putBoolean(preferenceKey, newChecked).apply()
                         onSwitchChanged(newChecked)
                         if (newChecked) {
-                            MyAccessibilityService.startService(context)
+                            AccessibilityService.startService(context)
                         } else {
-                            MyAccessibilityService.stopService(context)
+                            AccessibilityService.stopService(context)
                         }
                     },
                     colors = SwitchDefaults.colors(
