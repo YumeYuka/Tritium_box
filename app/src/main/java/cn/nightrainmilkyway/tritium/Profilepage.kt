@@ -107,10 +107,10 @@ fun ProfileList() {
             url = "https://github.com/Chenzyadb"
         )
         Profile(
-            name = "NightRainMilkyWay",
+            name = "YumeYuka",
             description = "@ 梦——それは現実の続き；現実——それは夢の終わり",
-            imageResId = R.mipmap.nightrain,
-            url = "https://github.com/NightRainMilkyWay"
+            imageResId = R.mipmap.yumeyuka,
+            url = "https://github.com/YumeYuka"
         )
         Profile(
             name = "Suni",

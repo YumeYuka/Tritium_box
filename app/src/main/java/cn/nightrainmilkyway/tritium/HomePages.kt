@@ -1,7 +1,6 @@
 package cn.nightrainmilkyway.tritium
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -73,7 +72,7 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
             .offset(y = 100.dp),
         shape = RoundedCornerShape(30.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFFfff8f7)
+            containerColor = Color(0xFFfdf2f0)
         ),
         elevation = CardDefaults.elevatedCardElevation(12.dp)
     ) {
@@ -111,7 +110,7 @@ fun ModeDisplayBlock(currentMode: String, onModeChange: (String) -> Unit) {
                             .padding(0.dp),
                         shape = shape,
                         colors = CardDefaults.cardColors(
-                            containerColor = Color(0xFFfff8f7)
+                            containerColor = Color(0xFFfdf2f0)
                         ),
                         elevation = CardDefaults.elevatedCardElevation(6.dp),
                     ) {
@@ -162,13 +161,13 @@ fun readModeFromFile(): String {
                 "balance" -> "均衡"
                 "performance" -> "性能"
                 "fast" -> "极速"
-                else -> "均衡" // Default mode if file content is unknown
+                else -> "均衡"
             }
         } else {
-            "均衡" // Default mode if file does not exist
+            "均衡"
         }
     } catch (e: IOException) {
         e.printStackTrace()
-        "均衡" // Default mode in case of an error
+        "均衡"
     }
 }

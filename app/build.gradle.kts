@@ -12,8 +12,8 @@ android {
         applicationId = "cn.nightrainmilkyway.tritium"
         minSdk = 28
         targetSdk = 35
-        versionCode = 110111
-        versionName = "2.0.5_release"
+        versionCode = 110112
+        versionName = "2.0.6_release"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
